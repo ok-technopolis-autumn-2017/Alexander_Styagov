@@ -1,95 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>todos</title>
-	<style type="text/css">
-		.todos-main-item-marker {
-			display: inline-block;
-			padding: 5px;
-			height: 18px;
-			width: 18px;
-			border-radius: 25px;
-			border: 1px solid grey;
-			background: transparent;
-			background-repeat: no-repeat;
-			background-position: center; 
-		}
-		.todos-main-item-value {
-			display: inline-block;
-			margin-left: 5px;
-		}
-		.completed {
-			background: url("icons/completed.png");
-			background-repeat: no-repeat;
-			background-position: center; 
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>todos</title>
 </head>
 <body>
-	<div class="main-wrapper">
-		<div class="todos-header">
-			<h1 id="todos-title" role="banner">todos</h1>
-		</div>
-		<div class="todos-main">
-			<div class="todos-main-header" role="section">
-				<button id="todos-main-header-select-all-button" name="select-all-button">
-					<img src="icons/select-all.png" alt="select all">
-				</button>
-				<input class="todos-main-header-input-box" placeholder="What needs to be done?">
-			</div>
-			<div role="main" aria-label="Задачи" class="todos-main-items">
-				<div role="complementary" aria-label="Задача 1" class="todos-main-item">
-					<button class="todos-main-item-body" name="item-1" aria-labelledby="html">
-						<span class="todos-main-item-marker"></span>
-						<label id="html" class="todos-main-item-value">HTML</label> 
-						<button class="todos-main-item-body-close" name="close-item">
-							<img src="icons/close.png" alt="close item">
-						</button>
-					</button>
-				</div>
-				<div role="complementary" aria-label="Задача 2" class="todos-main-item">
-					<button class="todos-main-item-body" name="item-2">
-						<span class="todos-main-item-marker completed" aria-labelledby="css"></span>
-						<label id="css" class="todos-main-item-value"><del>CSS</del></label>
-						<button class="todos-main-item-body-close" name="close-item">
-							<img src="icons/close.png" alt="close item">
-						</button>
-					</button>
-				</div>
-				<div role="complementary" aria-label="Задача 3" class="todos-main-item">
-					<button class="todos-main-item-body" name="item-3">
-						<span class="todos-main-item-marker" aria-labelledby="js"></span>
-						<label id="js" class="todos-main-item-value">JS</label> 
-						<button class="todos-main-item-body-close" name="close-item">
-							<img src="icons/close.png" alt="close item">
-						</button>
-					</button>
-				</div>
-				<div role="complementary" aria-label="Задача 4" class="todos-main-item">
-					<button class="todos-main-item-body" name="item-4">
-						<span class="todos-main-item-marker" aria-labelledby="js-tools"></span>
-						<label id="js-tools" class="todos-main-item-value">JS Tools</label> 
-						<button class="todos-main-item-body-close" name="close-item">
-							<img src="icons/close.png" alt="close item">
-						</button>
-					</button>
-				</div>
-			</div>
-			<div role="complementary" aria-label="Информация о состоянии" class="todos-main-footer">
-				<div class="todos-main-footer-items-left-text" name="items left block">
-					3 items left
-				</div>
-				<div role="navigation" aria-label="Выбор типа задач" class="todos-main-footer-radio" name="type of items radio switch">
-					<input type="radio" name="todos-main-footer-radio-group" checked />All
-					<input type="radio" name="todos-main-footer-radio-group" />Active
-					<input type="radio" name="todos-main-footer-radio-group" />Completed
-				</div>
-				<button class="todos-main-footer-clear-button" name="clear all completed button">
-					Clear completed
-				</button>
-			</div>
-		</div>
-	</div>
+
+<div class="todos-header">
+    <h1 class="title">todos</h1>
+</div>
+
+<div class="todos-main">
+    <div class="todos-add">
+        <button class="todo-add_select-all" 
+                aria-label="select all tasks">
+        </button>
+        <input class="todo-add_input"  placeholder="What needs to be done?"
+                aria-label="input field for new todo element">
+    </div>
+
+    <div class="todos-list">
+
+        <div class="todo-item">
+            <textarea class="todo-item_text">HTML</textarea>
+
+            <input type="checkbox" 
+                  class="todo-item_notready-mark" aria-label="mark task as ready" />
+            
+            <button class="todo-item_remove" aria-label="remove task"></button>
+        </div>
+
+        <div class="todo-item __ready">
+            <textarea class="todo-item_text">CSS</textarea>
+
+            <input type="checkbox" checked="checked" class="todo-item_ready-mark"         aria-label="mark task as not ready" />
+
+            <button class="todo-item_remove" aria-label="remove task"></button>
+        </div>
+
+        <div class="todo-item">
+            <textarea class="todo-item_text">JS</textarea>
+
+            <input type="checkbox" 
+                  class="todo-item_notready-mark" aria-label="mark task as ready" />
+            
+            <button class="todo-item_remove" aria-label="remove task"></button>
+        </div>
+
+        <div class="todo-item">
+            <textarea class="todo-item_text">JS Tools</textarea>
+
+            <input type="checkbox" 
+                  class="todo-item_notready-mark" aria-label="mark task as ready" />
+            
+            <button class="todo-item_remove" aria-label="remove task"></button>
+        </div>
+
+    </div>
+
+    <div class="todos-actions-bar">
+
+        <div class="todos-actions-bar_counter"
+              aria-label="not ready yet tasks count">3 todo</div>
+
+        <div class="todos-actions-bar_filters">
+            <button class="todos-filter __active" data-filter="all" 
+                    aria-label="filter: show all tasks">All</button>
+
+            <button class="todos-filter" data-filter="selected" 
+                    aria-label="filter: show active tasks" role="button">Active</button>
+
+            <button class="todos-filter__active" data-filter="unselected" 
+                    aria-label="filter: show completed tasks" role="button">Completed</button>
+        </div>
+
+        <button class="todos-actions-bar_clear-completed" 
+                aria-label="delete completed tasks">
+          Clear completed
+        </button>
+
+    </div>
+</div>
 </body>
 </html>
