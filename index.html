@@ -3,83 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>todos</title>
+
+    <link rel="stylesheet" type="text/css" href="./style/default.css">
 </head>
 <body>
 
-<div class="todos-header">
-    <h1 class="title">todos</h1>
+<div class="todos-main-wrapper">
+    
+    <div class="todos-header">
+        <h1 class="todos-title">todos</h1>
+    </div>
+
+    <div class="todos-container">
+        <div class="todos-add">
+            <button class="todos-add_select-all" 
+                    aria-label="select all tasks">
+                <div class="todos-add_select-all_icon"></div>
+            </button>
+
+            <div class="todos-add_new-item-wrap">
+                <input class="todos-item_new-item"  
+                    placeholder="What needs to be done?"
+                    aria-label="input field for new todo element">
+            </div>
+        </div>
+
+        <div class="todos-list">
+            <div class="todos-item">
+                <div class="todos-item_ready-mark">
+                        <input type="checkbox" 
+                            class="todos-item_ready-mark_target" 
+                            aria-label="mark task as ready" />
+
+                    <div class="todos-item_ready-mark_visual"></div>
+                </div>
+
+                <button class="todos-item_remove" 
+                        aria-label="remove task">
+                    <div class="todos-item_remove_icon"></div>
+                </button>
+
+                <div class="todos-item_text" contenteditable="true">HTML</div>
+            </div>
+
+            <div class="todos-item __ready">
+                <div class="todos-item_ready-mark">
+                    <input type="checkbox" 
+                      class="todos-item_ready-mark_target" 
+                      aria-label="mark task as not ready" 
+                      checked="checked" />
+
+                    <div class="todos-item_ready-mark_visual"></div>
+                </div>
+
+                <button class="todos-item_remove" aria-label="remove task">
+                    <div class="todos-item_remove_icon"></div>
+                </button>
+
+                <div class="todos-item_text __done" contenteditable="true">CSS</div>
+            </div>
+
+            <div class="todos-item">
+                <div class="todos-item_ready-mark">
+                    <input type="checkbox" 
+                      class="todos-item_ready-mark_target" aria-label="mark task as ready" />
+                      <div class="todos-item_ready-mark_visual"></div>
+                </div>
+                
+                <button class="todos-item_remove" aria-label="remove task">
+                    <div class="todos-item_remove_icon"></div>
+                </button>
+
+                <div class="todos-item_text" contenteditable="true">JS</div>
+            </div>
+
+            <div class="todos-item">
+                <div class="todos-item_ready-mark">
+                    <input type="checkbox" 
+                      class="todos-item_ready-mark_target" aria-label="mark task as ready" />
+                    <div class="todos-item_ready-mark_visual"></div>
+                </div>
+                
+                <button class="todos-item_remove" aria-label="remove task">
+                    <div class="todos-item_remove_icon"></div>
+                </button>
+
+                <div class="todos-item_text" contenteditable="true">JS Tools</div>
+            </div>
+
+        </div>
+
+        <div class="todos-actions-bar">
+
+            <div class="todos-actions-bar_counter"
+                  aria-label="not ready yet tasks count">3 items left</div>
+
+            <button class="todos-actions-bar_clear-completed" 
+                    aria-label="delete completed tasks">
+              Clear completed
+            </button>
+
+            <div class="todos-actions-bar_filters">
+                <button class="todos-filter __active" data-filter="all" 
+                        aria-label="filter: show all tasks">All</button>
+
+                <button class="todos-filter" data-filter="selected" 
+                        aria-label="filter: show active tasks" role="button">Active</button>
+
+                <button class="todos-filter" data-filter="unselected" 
+                        aria-label="filter: show completed tasks" role="button">Completed</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="todos-main">
-    <div class="todos-add">
-        <button class="todo-add_select-all" 
-                aria-label="select all tasks">
-        </button>
-        <input class="todo-add_input"  placeholder="What needs to be done?"
-                aria-label="input field for new todo element">
-    </div>
-
-    <div class="todos-list">
-
-        <div class="todo-item">
-            <textarea class="todo-item_text">HTML</textarea>
-
-            <input type="checkbox" 
-                  class="todo-item_notready-mark" aria-label="mark task as ready" />
-            
-            <button class="todo-item_remove" aria-label="remove task"></button>
-        </div>
-
-        <div class="todo-item __ready">
-            <textarea class="todo-item_text">CSS</textarea>
-
-            <input type="checkbox" checked="checked" class="todo-item_ready-mark"         aria-label="mark task as not ready" />
-
-            <button class="todo-item_remove" aria-label="remove task"></button>
-        </div>
-
-        <div class="todo-item">
-            <textarea class="todo-item_text">JS</textarea>
-
-            <input type="checkbox" 
-                  class="todo-item_notready-mark" aria-label="mark task as ready" />
-            
-            <button class="todo-item_remove" aria-label="remove task"></button>
-        </div>
-
-        <div class="todo-item">
-            <textarea class="todo-item_text">JS Tools</textarea>
-
-            <input type="checkbox" 
-                  class="todo-item_notready-mark" aria-label="mark task as ready" />
-            
-            <button class="todo-item_remove" aria-label="remove task"></button>
-        </div>
-
-    </div>
-
-    <div class="todos-actions-bar">
-
-        <div class="todos-actions-bar_counter"
-              aria-label="not ready yet tasks count">3 todo</div>
-
-        <div class="todos-actions-bar_filters">
-            <button class="todos-filter __active" data-filter="all" 
-                    aria-label="filter: show all tasks">All</button>
-
-            <button class="todos-filter" data-filter="selected" 
-                    aria-label="filter: show active tasks" role="button">Active</button>
-
-            <button class="todos-filter__active" data-filter="unselected" 
-                    aria-label="filter: show completed tasks" role="button">Completed</button>
-        </div>
-
-        <button class="todos-actions-bar_clear-completed" 
-                aria-label="delete completed tasks">
-          Clear completed
-        </button>
-
-    </div>
-</div>
 </body>
 </html>
