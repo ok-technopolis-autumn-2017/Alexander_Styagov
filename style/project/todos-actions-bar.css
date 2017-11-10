@@ -1,0 +1,25 @@
+.todos-actions-bar {
+    display: flex;
+    height: 40px;
+    position: relative;
+    align-items: center;
+    color: #888;
+    font-weight: 300;
+}
+
+    .todos-actions-bar_counter {
+        float: left;
+        margin-left: 12px;
+    }
+
+    .todos-actions-bar_clear-completed {
+        float: right;
+        position: relative;
+        order: 2;
+        margin-right: 12px;
+        background: none;
+        border: none;
+        outline: none;
+        color: inherit;
+        font-weight: inherit;
+    }
